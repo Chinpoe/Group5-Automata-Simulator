@@ -229,7 +229,7 @@ st.divider()
 
 st.header("Context-Free Grammar (CFG)")
 cfg1 = {
-    "S": ["A", "B", "C", "D", "B", "F"],
+    "S": ["ABCDBF"],
     "A": ["a", "b"],
     "B": ["Λ", "aB", "bB"],
     "C": ["aa", "bb"],
@@ -239,7 +239,7 @@ cfg1 = {
 
 
 cfg2 = {
-    "S": ["A", "B", "C", "D", "F"],
+    "S": ["ABCDF"],
     "A": ["11", "00"],
     "B": ["Λ", "0B", "1B"],
     "C": ["101", "111", "01"],
