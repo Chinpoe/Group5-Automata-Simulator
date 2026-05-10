@@ -1,6 +1,5 @@
 import streamlit as st
 import graphviz
-from streamlit_autorefresh import st_autorefresh
 
 #****************
 #DFA Dictionaries
