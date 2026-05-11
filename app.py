@@ -93,6 +93,7 @@ def draw_graph(dfa, path_history = None):
 
     dot = graphviz.Digraph(graph_attr={'rankdir': 'LR'})
 
+
     if path_history is None:
         path_history = []
 
@@ -151,6 +152,7 @@ def draw_graph(dfa, path_history = None):
 #***************
 #System UI
 #***************
+st.set_page_config(layout="wide")
 st.title("Group 5 Automata DFA, CFG, and PDA Simulator")
 
 st.divider()
@@ -217,12 +219,12 @@ if 'path' in st.session_state:
     current_history = path[:step + 1]
     
     # Draw the graph with the breadcrumb trail
-    st.graphviz_chart(draw_graph(regex, path_history=current_history))
+    st.graphviz_chart(draw_graph(regex, path_history=current_history), use_container_width=True)
 
 # If we DO NOT have a path yet, just show the blank map
 else:
     st.write("### Interactive DFA")
-    st.graphviz_chart(draw_graph(regex))
+    st.graphviz_chart(draw_graph(regex), use_container_width=True)
 
 st.divider()
 
@@ -267,7 +269,13 @@ st.header("Pushdown Automaton (PDA)")
 
 if choice == "Regex 1":
     st.write("Below is the structural flowchart for the PDA corresponding to Regex 1:")
-    st.image("PDA-Reg1.drawio.png", caption="Regex 1: Pushdown Automaton")
+    with st.container(height=600):
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image("PDA-Reg1.drawio.png", caption="Regex 1: Pushdown Automaton")
 else:
     st.write("Below is the structural flowchart for the PDA corresponding to Regex 2:")
-    st.image("PDA-Reg2.drawio.png", caption="Regex 2: Pushdown Automaton")
+    with st.container(height=600):
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image("PDA-Reg2.drawio.png", caption="Regex 2: Pushdown Automaton")
