@@ -91,7 +91,7 @@ def run_dfa(input_string, dfa):
 
 def draw_graph(dfa, path_history = None):
 
-    dot = graphviz.Digraph(graph_attr={'rankdir': 'LR'})
+    dot = graphviz.Digraph(graph_attr={'rankdir': 'UD'})
 
     if path_history is None:
         path_history = []
